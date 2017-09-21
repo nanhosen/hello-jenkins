@@ -1,4 +1,9 @@
 #!/bin/sh
 ssh useradmin@138.68.27.50 <<EOF
-  exit
+	cd ~/hello-jenkins
+	#sudo chown -R useradmin .
+	git pull origin master       
+	npm install --production
+  forever restartall
+	exit
 EOF
